@@ -29,11 +29,9 @@ public class Tree {
 
 		root.left = buildTree(inorder, inStart, k - 1, postorder, postStart,
 				postStart + k - (inStart + 1));
-		// Because k is not the length, it it need to -(inStart+1) to get the
-		// length
+		
 		root.right = buildTree(inorder, k + 1, inEnd, postorder, postStart + k
 				- inStart, postEnd - 1);
-		// postStart+k-inStart = postStart+k-(inStart+1) +1
 
 		return root;
 	}
@@ -71,8 +69,8 @@ public class Tree {
 		}
 
 		Tree myTree = new Tree();
-		TreeNode fuckingRoot = myTree.buildTree(inOrder, postOrder);
+		TreeNode myRoot = myTree.buildTree(inOrder, postOrder);
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
-		myTree.breadthSearch(fuckingRoot, queue);
+		myTree.breadthSearch(myRoot, queue);
 	}
 }
